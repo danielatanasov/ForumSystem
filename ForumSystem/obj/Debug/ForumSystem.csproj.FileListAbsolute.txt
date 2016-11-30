@@ -84,3 +84,7 @@ c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem
 c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\obj\Debug\ForumSystem.dll
 c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\obj\Debug\ForumSystem.pdb
+C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Common.dll
+C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\bin\AutoMapper.dll
+C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Common.pdb
+C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\bin\AutoMapper.xml

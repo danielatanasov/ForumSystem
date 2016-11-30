@@ -9,5 +9,13 @@
         {
             get;
         }
+        IRepository<Post> Posts
+        {
+            get;
+        }
+        IRepository<Category> Categories
+        {
+            get;
+        }
     }
 }

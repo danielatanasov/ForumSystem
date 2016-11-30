@@ -1,0 +1,23 @@
+﻿.home-page{
+    margin-top:20px;
+    border-top: solid 4px #ffd800;
+}
+.category-row{
+    border: solid 1px #eee;
+    padding:10px 0;
+}
+.category-row p{
+    margin-bottom:0;
+}
+.category-row h3{
+    font-size:18px;
+    font-weight: bold;
+    margin:0;
+}
+.last-changed{
+    padding:5px 0;
+    vertical-align:middle;
+    color:#666;
+    font-size:12px;
+    line-height:14px;
+}

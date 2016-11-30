@@ -1,16 +1,20 @@
-﻿using System;
+﻿using ForumSystem.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper.QueryableExtensions;
+using ForumSystem.Models;
 
 namespace ForumSystem.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
-            return View();
+            var categories = Mapper.Map<List<Category>, List<CategoryViewModel>>(Data.Categories.All().ToList());
+            return View(categories);
         }
 
         public ActionResult About()

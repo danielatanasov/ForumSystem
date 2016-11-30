@@ -19,6 +19,17 @@
             set;
         }
 
+        IDbSet<Post> Posts
+        {
+            get;
+            set;
+        }
+        IDbSet<Category> Categories
+        {
+            get;
+            set;
+        }
+
         public static ForumSystemDbContext Create()
         {
             return new ForumSystemDbContext();

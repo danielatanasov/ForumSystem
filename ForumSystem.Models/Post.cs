@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace ForumSystem.Models
 {
-    public class Post
+    public class Post : BaseModel
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public virtual ApplicationUser Author { get; set; }
-        public int AuthorId { get; set; }
+        public string AuthorId { get; set; }
     }
 }

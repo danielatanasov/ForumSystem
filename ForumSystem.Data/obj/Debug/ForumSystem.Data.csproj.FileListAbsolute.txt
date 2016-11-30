@@ -14,3 +14,8 @@ c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem
 c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.csprojResolveAssemblyReference.cache
 c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.dll
 c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.pdb
+c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.InitialCreate.resources
+c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.csproj.GenerateResource.Cache
+c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.InitialCreate1.resources
+c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.InitialCreate2.resources
+c:\users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.Change_Post_and_Category_user_id_type.resources

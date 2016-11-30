@@ -29,7 +29,21 @@
                 return this.GetRepository<ApplicationUser>();
             }
         }
+        public IRepository<Post> Posts
+        {
+            get
+            {
+                return this.GetRepository<Post>();
+            }
+        }
 
+        public IRepository<Category> Categories
+        {
+            get
+            {
+                return this.GetRepository<Category>();
+            }
+        }
         private IRepository<T> GetRepository<T>() where T : class
         {
             var typeOfRepository = typeof(T);
