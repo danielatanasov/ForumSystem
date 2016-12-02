@@ -19,12 +19,12 @@
             set;
         }
 
-        IDbSet<Post> Posts
+        public IDbSet<Post> Posts
         {
             get;
             set;
         }
-        IDbSet<Category> Categories
+        public IDbSet<Category> Categories
         {
             get;
             set;

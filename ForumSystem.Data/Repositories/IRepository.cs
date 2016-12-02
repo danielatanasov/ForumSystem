@@ -17,5 +17,7 @@
         T Delete(object id);
 
         int SaveChanges();
+        //void Add(ForumSystem.Areas.Administration.ViewModels.CategoryViewModel category);
+        //void Add(ForumSystem.Areas.Administration.ViewModels.CategoryViewModel category);
     }
 }

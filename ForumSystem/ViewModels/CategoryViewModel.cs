@@ -11,7 +11,7 @@ namespace ForumSystem.ViewModels
     {
         public string Title { get; set; }
         public string ShortDescription { get; set; }
-        public ApplicationUser LastModifiedBy { get; set; }
+        public ApplicationUserViewModel LastModifiedBy { get; set; }
         public DateTime? CreatedOn { get; set; }
     }
 }

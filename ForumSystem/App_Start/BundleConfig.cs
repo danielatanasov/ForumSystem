@@ -27,6 +27,9 @@ namespace ForumSystem
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/custom.css"));
+            bundles.Add(new StyleBundle("~/Content/admin").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/admin.css"));
         }
     }
 }
