@@ -60,5 +60,10 @@
         {
             return this.context.SaveChanges();
         }
+
+        IRepository<T> IForumSystemData.GetRepository<T>()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -58,6 +58,7 @@ namespace ForumSystem.Areas.Administration.Controllers
                 dbCategory.CreatedOn = DateTime.Now;
                 Data.Categories.Add(dbCategory);
                 Data.Categories.SaveChanges();
+   
                 return RedirectToAction("Index");
             }
 

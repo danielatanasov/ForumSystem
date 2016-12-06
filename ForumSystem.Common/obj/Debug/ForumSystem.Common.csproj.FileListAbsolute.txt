@@ -1,7 +1,7 @@
-C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Common\bin\Debug\ForumSystem.Common.dll
-C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Common\bin\Debug\ForumSystem.Common.pdb
-C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Common\bin\Debug\AutoMapper.dll
-C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Common\bin\Debug\AutoMapper.xml
-C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Common\obj\Debug\ForumSystem.Common.csprojResolveAssemblyReference.cache
-C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Common\obj\Debug\ForumSystem.Common.dll
-C:\Users\datanasov\documents\visual studio 2015\Projects\ForumSystem\ForumSystem.Common\obj\Debug\ForumSystem.Common.pdb
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Common\bin\Debug\ForumSystem.Common.dll
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Common\bin\Debug\ForumSystem.Common.pdb
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Common\bin\Debug\AutoMapper.dll
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Common\bin\Debug\AutoMapper.xml
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Common\obj\Debug\ForumSystem.Common.csprojResolveAssemblyReference.cache
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Common\obj\Debug\ForumSystem.Common.dll
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Common\obj\Debug\ForumSystem.Common.pdb

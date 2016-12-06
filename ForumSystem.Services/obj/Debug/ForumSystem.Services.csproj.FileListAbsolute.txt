@@ -1,0 +1,15 @@
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\ForumSystem.Services.dll
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\ForumSystem.Services.pdb
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\ForumSystem.Data.dll
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\ForumSystem.Models.dll
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\EntityFramework.dll
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\ForumSystem.Data.pdb
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\ForumSystem.Models.pdb
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\EntityFramework.xml
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\obj\Debug\ForumSystem.Services.csprojResolveAssemblyReference.cache
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\obj\Debug\ForumSystem.Services.dll
+C:\Users\datanasov\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Services\obj\Debug\ForumSystem.Services.pdb

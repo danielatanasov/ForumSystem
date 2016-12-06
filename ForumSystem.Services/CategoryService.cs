@@ -5,15 +5,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ForumSystem.Models;
+using ForumSystem.Data;
 
 namespace ForumSystem.Services
 {
-    public class CategoryService : ICategoryService
+    public class PostService : BaseService<Post>, ICategoryService
     {
-        public IQueryable<Category> GetAll()
+        public PostService(IForumSystemData data)
+            : base(data)
+        {
+        }
+
+        public override IQueryable<Post> GetAll()
+        {
+            return base.GetAll().OrderByDescending(p => p.CreatedOn);
+        }
+
+        public override void Add(Post entity)
+        {
+            entity.CreatedOn = DateTime.Now;
+            base.Add(entity);
+            base.SaveChanges();
+        }
+
+        IQueryable<Category> ICategoryService.GetAll()
         {
             throw new NotImplementedException();
         }
-
     }
 }

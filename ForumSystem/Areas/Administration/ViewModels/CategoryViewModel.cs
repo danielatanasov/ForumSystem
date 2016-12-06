@@ -14,7 +14,7 @@ namespace ForumSystem.Areas.Administration.ViewModels
     {
         public int Id  { get; set; }
         [Required]
-        [MaxLength(20)]
+        [MaxLength(30)]
         public string Title { get; set; }
         public string ShortDescription { get; set; }
         public ApplicationUserViewModel LastModifiedBy { get; set; }

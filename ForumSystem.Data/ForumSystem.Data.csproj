@@ -58,21 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IForumSystemData.cs" />
-    <Compile Include="Migrations\201611291430269_InitialCreate.cs" />
-    <Compile Include="Migrations\201611291430269_InitialCreate.Designer.cs">
-      <DependentUpon>201611291430269_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611301054190_InitialCreate1.cs" />
-    <Compile Include="Migrations\201611301054190_InitialCreate1.Designer.cs">
-      <DependentUpon>201611301054190_InitialCreate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611301110145_InitialCreate2.cs" />
-    <Compile Include="Migrations\201611301110145_InitialCreate2.Designer.cs">
-      <DependentUpon>201611301110145_InitialCreate2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611301237380_Change_Post_and_Category_user_id_type.cs" />
-    <Compile Include="Migrations\201611301237380_Change_Post_and_Category_user_id_type.Designer.cs">
-      <DependentUpon>201611301237380_Change_Post_and_Category_user_id_type.cs</DependentUpon>
+    <Compile Include="Migrations\201612061230228_post_model_change_new22.cs" />
+    <Compile Include="Migrations\201612061230228_post_model_change_new22.Designer.cs">
+      <DependentUpon>201612061230228_post_model_change_new22.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,17 +80,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611291430269_InitialCreate.resx">
-      <DependentUpon>201611291430269_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611301054190_InitialCreate1.resx">
-      <DependentUpon>201611301054190_InitialCreate1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611301110145_InitialCreate2.resx">
-      <DependentUpon>201611301110145_InitialCreate2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611301237380_Change_Post_and_Category_user_id_type.resx">
-      <DependentUpon>201611301237380_Change_Post_and_Category_user_id_type.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612061230228_post_model_change_new22.resx">
+      <DependentUpon>201612061230228_post_model_change_new22.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

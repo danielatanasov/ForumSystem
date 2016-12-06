@@ -12,5 +12,6 @@ namespace ForumSystem.Models
         public string Content { get; set; }
         public virtual ApplicationUser Author { get; set; }
         public string AuthorId { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

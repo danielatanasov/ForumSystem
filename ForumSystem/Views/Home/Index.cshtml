@@ -5,12 +5,12 @@
     <div class="row home-page">
         <div class="col-md-12 category-row">
             <div class="col-md-10">
-                <h3><a href="#">@category.Title</a></h3>
+                <h3>@Html.ActionLink(@category.Title, "PostsByCategory", "Category", new { category.Id}, null )</h3>
                 <p>@category.ShortDescription</p>
                 
             </div>
             <div class="col-md-2 last-changed">
-                Last updated by: <a href="#">@category.LastModifiedBy.UserName</a> on @category.CreatedOn
+                Last updated by: <a href="#">@category.LastModifiedBy.UserName</a> on @category.CreatedOn 
             </div>
             <div class="clearfix"></div>
         </div>

@@ -26,3 +26,17 @@
 .body-content{
     padding-top:50px;
 }
+.start-topic{
+    background-color:#ffd800;
+    border-color: #ffd800;
+}
+.start-topic:hover{
+    background-color:#eccb11;
+    border-color:#eccb11;
+}
+.start-topic a{
+    color:#333;
+}
+.start-topic a:hover{
+    text-decoration:none;
+}
