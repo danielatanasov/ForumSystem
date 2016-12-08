@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ForumSystem.Services.Contracts
 {
-    public interface ICategoryService : IService<Category>
+    public interface IUsersService : IService<ApplicationUser>
     {
-        IQueryable<Category> GetAll();
+        IQueryable<ApplicationUser> GetAll();
     }
 }

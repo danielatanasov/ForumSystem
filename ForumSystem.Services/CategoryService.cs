@@ -9,28 +9,28 @@ using ForumSystem.Data;
 
 namespace ForumSystem.Services
 {
-    public class PostService : BaseService<Post>, ICategoryService
+    public class CategoryService : BaseService<Category>, ICategoryService
     {
-        public PostService(IForumSystemData data)
+        public CategoryService(IForumSystemData data)
             : base(data)
         {
         }
 
-        public override IQueryable<Post> GetAll()
+        public override IQueryable<Category> GetAll()
         {
             return base.GetAll().OrderByDescending(p => p.CreatedOn);
         }
 
-        public override void Add(Post entity)
+        public override void Add(Category entity)
         {
             entity.CreatedOn = DateTime.Now;
             base.Add(entity);
             base.SaveChanges();
         }
 
-        IQueryable<Category> ICategoryService.GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        //IQueryable<Category> ICategoryService.GetAll()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

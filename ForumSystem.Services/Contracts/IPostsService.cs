@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace ForumSystem.Services.Contracts
 {
-    public interface ICategoryService : IService<Category>
+    public interface IPostsService : IService<Post>
     {
-        IQueryable<Category> GetAll();
+        IQueryable<Post> GetAll();
+
+        ICollection<Post> GetAllById(int id);
     }
 }

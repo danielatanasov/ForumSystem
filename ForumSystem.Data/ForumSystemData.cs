@@ -44,7 +44,7 @@
                 return this.GetRepository<Category>();
             }
         }
-        private IRepository<T> GetRepository<T>() where T : class
+        public IRepository<T> GetRepository<T>() where T : class
         {
             var typeOfRepository = typeof(T);
             if (!this.repositories.ContainsKey(typeOfRepository))
@@ -59,11 +59,6 @@
         public int SaveChanges()
         {
             return this.context.SaveChanges();
-        }
-
-        IRepository<T> IForumSystemData.GetRepository<T>()
-        {
-            throw new NotImplementedException();
         }
     }
 }

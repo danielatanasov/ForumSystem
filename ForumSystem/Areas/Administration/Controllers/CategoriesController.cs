@@ -10,103 +10,106 @@ using ForumSystem.Data;
 using ForumSystem.Models;
 using ForumSystem.Controllers;
 using ForumSystem.Areas.Administration.ViewModels;
+using ForumSystem.Services.Contracts;
 
 namespace ForumSystem.Areas.Administration.Controllers
 {
     public class CategoriesController : BaseController
     {
-        // GET: Administration/Categories
+        private ICategoryService categoryService;
+        private IUsersService usersService;
+
+        public CategoriesController(ICategoryService categoryService, IUsersService usersService)
+        {
+            this.categoryService = categoryService;
+            this.usersService = usersService;
+        }
+
+        // GET: Administration/Posts
         public ActionResult Index()
         {
-            var categories = Mapper.Map<List<Category>, List<CategoryViewModel>>(Data.Categories.All().ToList());
+            var categories = Mapper.Map<List<Category>,
+                List<CategoryViewModel>>(categoryService.GetAll().ToList());
+
             return View(categories);
         }
 
-        // GET: Administration/Categories/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Category category = Data.Categories.Find(id);
-            if (category == null)
-            {
-                return HttpNotFound();
-            }
-            return View(category);
-        }
-
-        // GET: Administration/Categories/Create
+        // GET: Administration/Posts/Create
         public ActionResult Create()
         {
-            CategoryViewModel createVM = new CategoryViewModel();
-            createVM.Users = new SelectList(Data.Users.All(), "Id", "UserName");
-            return View(createVM);
+            CategoryViewModel categoryVM = new CategoryViewModel();
+            categoryVM.Users = new SelectList(this.usersService.GetAll(), "Id", "UserName");
+
+            return View(categoryVM);
         }
 
-        // POST: Administration/Categories/Create
+        // POST: Administration/Posts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create(CategoryViewModel category)
         {
             if (ModelState.IsValid)
             {
                 var dbCategory = Mapper.Map<Category>(category);
-                dbCategory.CreatedOn = DateTime.Now;
-                Data.Categories.Add(dbCategory);
-                Data.Categories.SaveChanges();
-   
+                this.categoryService.Add(dbCategory);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LastModifiedById = new SelectList(Data.Users.All(), "Id", "Email", category.LastModifiedById);
+            ViewBag.AuthorId = new SelectList(this.categoryService.GetAll(), "Id", "Email", category.LastModifiedById);
             return View(category);
         }
 
-        // GET: Administration/Categories/Edit/5
+        [ValidateInput(false)]
+        // GET: Administration/Posts/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = Data.Categories.Find(id);
+
+            Category category = this.categoryService.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.LastModifiedById = new SelectList(Data.Users.All(), "Id", "Email", category.LastModifiedById);
-            return View(category);
+
+            CategoryViewModel categoryVM = Mapper.
+                Map<CategoryViewModel>(category);
+            categoryVM.Users = new SelectList(this.usersService.GetAll(), "Id", "Email", category.LastModifiedById);
+            return View(categoryVM);
         }
 
-        // POST: Administration/Categories/Edit/5
+        // POST: Administration/Posts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,ShortDescription,LastModifiedById,CreatedOn,IsDeleted")] Category category)
+        [ValidateInput(false)]
+        public ActionResult Edit(CategoryViewModel category)
         {
             if (ModelState.IsValid)
             {
-                Data.Categories.Update(category);
-                Data.Categories.SaveChanges();
+                var dbCategory = Mapper.Map<Category>(category);
+                this.categoryService.Update(dbCategory);
                 return RedirectToAction("Index");
             }
-            ViewBag.LastModifiedById = new SelectList(Data.Users.All(), "Id", "Email", category.LastModifiedById);
+
+            category.Users = new SelectList(this.usersService.GetAll(), "Id", "Email", category.LastModifiedById);
             return View(category);
         }
 
-        // GET: Administration/Categories/Delete/5
+        // GET: Administration/Posts/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = Data.Categories.Find(id);
+            Category category = this.categoryService.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -114,14 +117,12 @@ namespace ForumSystem.Areas.Administration.Controllers
             return View(category);
         }
 
-        // POST: Administration/Categories/Delete/5
+        // POST: Administration/Posts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = Data.Categories.Find(id);
-            Data.Categories.Delete(category);
-            Data.Categories.SaveChanges();
+            this.categoryService.Delete(id);
             return RedirectToAction("Index");
         }
 
@@ -129,7 +130,7 @@ namespace ForumSystem.Areas.Administration.Controllers
         //{
         //    if (disposing)
         //    {
-        //        Data.Dispose();
+        //        db.Dispose();
         //    }
         //    base.Dispose(disposing);
         //}

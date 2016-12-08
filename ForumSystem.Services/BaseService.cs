@@ -6,19 +6,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ForumSystem.Services.Contracts;
 
 namespace ForumSystem.Services
 {
     public class BaseService<T> : IService<T> where T : class
     {
         private IRepository<T> repository;
-        private IForumSystemData data;
 
         public BaseService(IForumSystemData data)
         {
             this.Data = data;
             this.repository = data.GetRepository<T>();
         }
+
         protected IForumSystemData Data { get; private set; }
 
 

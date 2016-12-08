@@ -1,7 +1,21 @@
-﻿
-@{
-    ViewBag.Title = "Details";
-}
+﻿@model IEnumerable<PostViewModel>
 
 <h2>Details</h2>
+
+@*@foreach (var post in Model)
+{
+    <div class="row home-page">
+        <div class="col-md-12 category-row">
+            <div class="col-md-10">
+                <h3>@post.Title</h3>
+                <p>@post.Content</p>
+
+            </div>
+            <div class="col-md-2 last-changed">
+                Last updated by: <a href="#">@post.Author.UserName</a> on @post.CreatedOn
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+}*@
 

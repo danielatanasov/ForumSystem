@@ -10,6 +10,10 @@ namespace ForumSystem.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Services.Contracts;
+    using Data;
+    using Services;
+    using Common.Caching;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +65,30 @@ namespace ForumSystem.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel
+               .Bind<IForumSystemData>()
+               .To<ForumSystemData>()
+               .InRequestScope();
+
+            kernel
+               .Bind<IPostsService>()
+               .To<PostsService>()
+               .InRequestScope();
+
+            kernel
+               .Bind<ICategoryService>()
+               .To<CategoryService>()
+               .InRequestScope();
+
+            kernel
+               .Bind<IUsersService>()
+               .To<UsersService>()
+               .InRequestScope();
+
+            kernel
+               .Bind<ICacheService>()
+               .To<HttpCacheService>()
+               .InRequestScope();
         }        
     }
 }

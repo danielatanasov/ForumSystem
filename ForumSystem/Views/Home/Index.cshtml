@@ -5,7 +5,7 @@
     <div class="row home-page">
         <div class="col-md-12 category-row">
             <div class="col-md-10">
-                <h3>@Html.ActionLink(@category.Title, "PostsByCategory", "Category", new { category.Id}, null )</h3>
+                <h3>@Html.ActionLink(@category.Title, "PostsByCategory", "Category", new { id = category.Id}, null )</h3>
                 <p>@category.ShortDescription</p>
                 
             </div>

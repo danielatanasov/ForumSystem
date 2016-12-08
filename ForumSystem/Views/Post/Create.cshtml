@@ -2,7 +2,8 @@
 @model PostViewModel
 <h2>Create</h2>
 
-@using (Html.BeginForm("Create", "Post", FormMethod.Post))
+
+@using (Html.BeginForm("Create", "Post",  FormMethod.Post, new { }))
 {
     <div>
         @Html.LabelFor(model => model.Title)
@@ -12,6 +13,7 @@
         @Html.LabelFor(model => model.Content)
         @Html.TextAreaFor(model => model.Content, new { @class = "form-control" })
     </div>
+    @Html.HiddenFor( model => model.CategoryId)
     <div><input type="submit" class="btn btn-primary" /></div>
 }
 

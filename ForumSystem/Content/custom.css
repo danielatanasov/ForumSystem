@@ -1,4 +1,5 @@
-﻿.home-page{
+﻿
+.home-page{
     border-top: solid 4px #ffd800;
 }
 .category-row{
@@ -29,6 +30,7 @@
 .start-topic{
     background-color:#ffd800;
     border-color: #ffd800;
+    margin-bottom:10px!important;
 }
 .start-topic:hover{
     background-color:#eccb11;

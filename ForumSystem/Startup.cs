@@ -1,5 +1,7 @@
 ﻿using Microsoft.Owin;
+using Ninject;
 using Owin;
+using System.Reflection;
 
 [assembly: OwinStartupAttribute(typeof(ForumSystem.Startup))]
 namespace ForumSystem
@@ -10,5 +12,16 @@ namespace ForumSystem
         {
             ConfigureAuth(app);
         }
+        private static StandardKernel CreateKernel()
+        {
+            var kernel = new StandardKernel();
+            kernel.Load(Assembly.GetExecutingAssembly());
+            return kernel;
+        }
     }
+    /// <summary>
+    /// Creates the kernel.
+    /// </summary>
+    /// <returns>the newly created kernel.</returns>
+    
 }

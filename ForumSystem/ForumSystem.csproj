@@ -96,6 +96,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -223,6 +224,8 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IPostService.cs" />
+    <Compile Include="Controllers\IUserService.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Global.asax.cs">
@@ -307,6 +310,7 @@
     <Content Include="Views\Category\PostsByCategory.cshtml" />
     <Content Include="Views\Post\Create.cshtml" />
     <Content Include="Views\Post\Details.cshtml" />
+    <Content Include="Views\Shared\_Button.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

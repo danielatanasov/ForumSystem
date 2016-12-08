@@ -11,15 +11,6 @@ namespace ForumSystem.Controllers
 {
     public abstract class BaseController : Controller
     {
-        public BaseController()
-            :this(new ForumSystemData())
-        {
-
-        }
-        public BaseController(IForumSystemData data)
-        {
-            this.Data = data;
-        }
         protected IMapper Mapper
         {
             get
@@ -27,6 +18,5 @@ namespace ForumSystem.Controllers
                 return AutoMapperConfig.Configuration.CreateMapper();
             }
         }
-        protected IForumSystemData Data{ get; private set; }
     }
 }

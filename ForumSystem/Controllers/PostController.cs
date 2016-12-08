@@ -10,30 +10,47 @@ using System.Data;
 using Microsoft.AspNet.Identity;
 using ForumSystem.Services;
 using ForumSystem.Services.Contracts;
+using ForumSystem.Common.Caching;
 
 namespace ForumSystem.Controllers
 {
     public class PostController : BaseController
     {
-        private ICategoryService categoriesService;
+        private IPostsService postsService;
+        private ICacheService cache;
+        private IUsersService usersService;
+        private ICategoryService categoryService;
 
-        public PostController(ICategoryService service)
+        public PostController(IPostsService postsService, IUsersService usersService, ICategoryService categoryService)
         {
-            this.categoriesService = service;
+            this.postsService = postsService;
+            this.usersService = usersService;
+            this.categoryService = categoryService;
         }
+        
         // GET: Post
         public ActionResult Index()
         {
-            var posts = Mapper.Map<List<Post>, List<PostViewModel>>(Data.Posts.All().ToList());
+            var dbPosts = this.cache.Get<ICollection<Post>>("allPosts", () =>
+            {
+                return postsService.GetAll().ToList();
+            }, 60);
+            //var posts = Mapper.Map<List<Post>, List<PostViewModel>>(Data.Posts.All().ToList());
+            var posts = Mapper.Map<ICollection<Post>,
+                ICollection<PostViewModel>>(dbPosts);
             return View(posts);
         }
         [HttpGet]
-        public ActionResult Create()
+        public ActionResult Create(int catId)
         {
-            return View();
+            PostViewModel postVM = new PostViewModel();
+            postVM.CategoryId = catId;
+            
+            return View(postVM);
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(PostViewModel post)
         {
             
@@ -42,18 +59,19 @@ namespace ForumSystem.Controllers
                 var dbPost = Mapper.Map<Post>(post);
                 dbPost.CreatedOn = DateTime.Now;
                 dbPost.AuthorId = User.Identity.GetUserId();
-                //dbPost.Category = post.
-                Data.Posts.Add(dbPost);
-                Data.Posts.SaveChanges();
-                return RedirectToAction("PostsByCategory","Category", new { id = post.Category.Id.ToString() });
+                var category = categoryService.Find(post.CategoryId);
+                dbPost.Category = category;
+                this.postsService.Add(dbPost);
+                //return View("Details");
+                return RedirectToAction("PostsByCategory","Category", new { id = post.CategoryId });
             }
-            ViewBag.AuthorId = new SelectList(Data.Users.All(), "Id", "Email", post.Author);
+            ViewBag.AuthorId = new SelectList(this.usersService.GetAll(), "Id", "Email", post.Author);
             return View(post);
         }
 
         public ActionResult Details(int? id)
         {
-            Category category = Data.Categories.Find(id);
+            Category category = this.categoryService.Find(id);
             return View(category);
         }
 

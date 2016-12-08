@@ -1,14 +1,13 @@
 ﻿@model IEnumerable<PostViewModel>
 
+<div class="row"><button class="btn btn-primary start-topic">@Html.ActionLink("Start new topic", "Create", "Post", new { catId = ViewData["category"] }, null)</button></div>
 
-<button class="btn btn-primary start-topic">@Html.ActionLink("Start new topic", "Create", "Post", new { }, null)</button>
-@*<h2>@Model.Title</h2>*@
 @foreach (var post in Model)
 {
     <div class="row home-page">
-        <div class="col-md-12 category-row">
+        <div class="col-md-12 category-row"> 
             <div class="col-md-10">
-                <h3>@post.Title</h3>
+                <h3>@Html.ActionLink(@post.Title, "Details", "Post", new { id = post.Id}, null)</h3>
                 <p>@post.Content</p>
 
             </div>
